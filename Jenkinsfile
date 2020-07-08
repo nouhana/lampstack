@@ -6,7 +6,7 @@ pipeline {
         stage('Staging') {
             steps {
                
-                sh '/usr/local/bin/docker-compose --file /lampstack/dockerstack/docker-compose.yml up --build'
+                sh 'docker-compose --file /lampstack/dockerstack/docker-compose.yml up --build'
             }
         }
         
