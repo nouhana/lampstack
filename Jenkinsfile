@@ -6,7 +6,7 @@ pipeline {
         stage('Staging') {
             steps {
                
-                sh '/usr/local/bin/docker-compose --file dockerstack/docker-compose.yml up --build --env-file=dockerstack/.env -d'
+                sh '/usr/local/bin/docker-compose --file dockerstack/docker-compose.yml up --build --env-file=dockerstack/.env --force-recreate -d'
             }
         }
         
