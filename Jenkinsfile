@@ -12,6 +12,9 @@ node {
 	sh "docker-compose -f ./dockerstack/docker-compose.yml down"
     post {
       always {
+	script {
+           foo()
+        }
         cleanWs deleteDirs: 
 true
       }
