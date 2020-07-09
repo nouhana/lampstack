@@ -10,4 +10,10 @@ node{
     stage 'Integration Test'
         sh "docker-compose -f /dockerstack/docker-compose.yml up --force-recreate --abort-on-container-exit"
         sh "docker-compose -f /dockerstack/docker-compose.yml down -v"
+    post {
+      always {
+        cleanWs deleteDirs: 
+true
+      }
+    }	
 }
