@@ -1,5 +1,7 @@
 	
-node{
+node {
+	try {
+   
  
     stage 'Checkout'
         checkout scm
@@ -16,4 +18,7 @@ node{
 true
       }
     }	
+	} finally {
+		junit 'build/test-results/test/*.xml'
+	}
 }
