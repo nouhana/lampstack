@@ -1,5 +1,5 @@
 	
-node('master') {
+node('docker') {
  
     stage 'Checkout'
         checkout scm
