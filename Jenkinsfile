@@ -1,6 +1,6 @@
 	
 node {
-	try {
+	
    
  
     stage 'Checkout'
@@ -18,7 +18,5 @@ node {
 true
       }
     }	
-	} finally {
-		junit 'build/test-results/test/*.xml'
-	}
+	
 }
