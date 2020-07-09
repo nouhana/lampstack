@@ -10,6 +10,17 @@ node {
     stage 'Integration Test'
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
 	sh "docker-compose -f ./dockerstack/docker-compose.yml down"
+    stage(‘Docker Purge’) {
+
+      steps {
+
+        sh ‘docker image prune -fa’
+
+        deleteDir()
+
+     }
+
+   }	
 	
 	
 }
