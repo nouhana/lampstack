@@ -1,14 +1,13 @@
-pipeline {
-    agent any
-
-    stages {
-        
-        stage('Staging') {
-            steps {
-               
-                sh 'docker-compose --file /lampstack/dockerstack/docker-compose.yml up --build'
-            }
-        }
-        
-    }
+	
+node('docker') {
+ 
+    stage 'Checkout'
+        checkout scm
+    stage 'Build & UnitTest'
+        sh "docker build -t dockerstack_php_apache:B${BUILD_NUMBER} -f /dockerstack/Dockerfile ."
+        sh "docker build -t dockerstack_db:db-B${BUILD_NUMBER} -f dockerstack/mysql.Dockerfile ."
+  
+    stage 'Integration Test'
+        sh "docker-compose -f /dockerstack/docker-compose.yml up --force-recreate --abort-on-container-exit"
+        sh "docker-compose -f /dockerstack/docker-compose.yml down -v"
 }
