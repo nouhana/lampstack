@@ -9,7 +9,6 @@ node {
   
     stage 'Integration Test'
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build --force-recreate -d"
-        sh "docker-compose -f ./dockerstack/docker-compose.yml down -v"
     post {
       always {
         cleanWs deleteDirs: 
