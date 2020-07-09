@@ -8,7 +8,8 @@ node {
         sh "docker build -t dockerstack_db:db-B${BUILD_NUMBER} -f ./dockerstack/mysql.Dockerfile ."
   
     stage 'Integration Test'
-        sh "docker-compose -f ./dockerstack/docker-compose.yml up --build --force-recreate -d"
+        sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
+	sh "docker-compose -f ./dockerstack/docker-compose.yml down"
     post {
       always {
         cleanWs deleteDirs: 
