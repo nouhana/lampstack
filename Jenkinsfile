@@ -9,6 +9,6 @@ node {
   
     stage 'Integration Test'
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
-	sh "docker-compose -f ./dockerstack/docker-compose.yml down"
+
 		
 }
