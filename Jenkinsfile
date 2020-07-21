@@ -11,7 +11,7 @@ node {
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
     
     stage 'push to azure container registry'
-	docker.withRegistry('https://dockerpvregistry.azurecr.io', 'acr_cred')
+	sh " docker login dockerpvregistry.azurecr.io -u dockerpvregistry -p O+gfJw=3g+VkHoEzcY2gTNZXQKOmz1Fl "
 	
 		
 }
