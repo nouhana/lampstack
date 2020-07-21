@@ -12,5 +12,9 @@ node {
     
     stage 'push to azure container registry'
 	sh " docker login dockerpvregistry.azurecr.io -u dockerpvregistry -p O+gfJw=3g+VkHoEzcY2gTNZXQKOmz1Fl "
-		
+	sh "docker tag dockerstack_php_apache:B${BUILD_NUMBER} dockerpvregistry.azurecr.io/dockerstack_php_apache:B${BUILD_NUMBER}"
+	sh "docker tag dockerstack_db:db-B${BUILD_NUMBER} dockerpvregistry.azurecr.io/dockerstack_db:db-B${BUILD_NUMBER}"
+	sh "docker push dockerpvregistry.azurecr.io/dockerstack_php_apache:B${BUILD_NUMBER}"
+	sh "docker push dockerpvregistry.azurecr.io/dockerstack_db:db-B${BUILD_NUMBER}"
+	sh " docker image prune -f "
 }
