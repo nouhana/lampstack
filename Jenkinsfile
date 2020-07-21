@@ -12,6 +12,9 @@ node {
     
     stage 'authentificate to gitlab registry'
         sh " docker login https://gitlab.com/registry12 -u elghandoury.nouhaila@gmail.com -p 123azerty "
+	sh "docker tag dockerstack_php_apache:B${BUILD_NUMBER} registry.gitlab.com/registry12/dockerstack_php_apache:B${BUILD_NUMBER}"
+	sh "docker push registry.gitlab.com/registry12/dockerstack_php-apache:B${BUILD_NUMBER}"
+
 	
 
 	
