@@ -11,7 +11,10 @@ node {
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
     
     stage 'push to azure container registry'
-	sh " docker login dockerpvregistry.azurecr.io -u dockerpvregistry -p O+gfJw=3g+VkHoEzcY2gTNZXQKOmz1Fl "
-	
+	withCredentials([usernamePassword( credentialsId: 'acr-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+	docker.withRegistry('dockerpvregistry.azurecr.io', 'docker-hub-credentials') {
+           sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+
+        }
 		
 }
