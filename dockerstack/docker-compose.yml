@@ -20,7 +20,6 @@ services:
     build:
       context: .
       dockerfile: mysql.Dockerfile
-    image: registry.gitlab.com/registry12/dockerstack_php-apache/db
     restart: always
     environment:
         MYSQL_ROOT_PASSWORD: "root"
