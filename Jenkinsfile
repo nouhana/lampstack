@@ -12,7 +12,7 @@ node {
 	sh "docker tag dockerstack_php_apache:B${BUILD_NUMBER} registry.gitlab.com/registry12/dockerstack_php-apache:B${BUILD_NUMBER}"
     
     stage 'authentificate to gitlab registry'
-        sh " docker login https://gitlab.com/registry12 -u elghandoury.nouhaila@gmail.com -p 123azerty "
+        docker.withRegistry('https://gitlab.com/registry12/dockerstack_php-apache/container_registry', '6903ba2b-6894-45bb-aebb-425c2856ecc8')
 	sh "docker-compose -f ./dockerstack/docker-compose.yml push"
 
 	
