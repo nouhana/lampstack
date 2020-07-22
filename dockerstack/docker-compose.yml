@@ -7,7 +7,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    image: registry.gitlab.com/registry12/dockerstack_php-apache
+    image: registry.gitlab.com/registry12
     restart: always
     ports:
         - "8083:80"
