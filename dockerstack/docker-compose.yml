@@ -7,7 +7,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    image: registry.gitlab.com/registry12/dockerstack_php-apache
+    image: dockerpvregistry.azurecr.io/dockerstack_php_apache
     restart: always
     ports:
         - "8083:80"
@@ -20,7 +20,7 @@ services:
     build:
       context: .
       dockerfile: mysql.Dockerfile
-    image: registry.gitlab.com/registry12/dockerstack_php-apache/db
+    image: dockerpvregistry.azurecr.io/dockerstack_db
     restart: always
     environment:
         MYSQL_ROOT_PASSWORD: "root"
