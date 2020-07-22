@@ -11,8 +11,10 @@ node {
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
 	
     stage 'authentificate to gitlab registry'
-        sh"docker login https://gitlab.com/registry12/ -u elghandoury.nouhaila@gmail.com -p 123azerty"
+        sh "docker login https://gitlab.com/registry12/ -u elghandoury.nouhaila@gmail.com -p 123azerty"
 	
+    stage 'push to gcr'
+	sh "docker-compose -f ./dockerstack/docker-compose.yml push"
 
 	
 }
