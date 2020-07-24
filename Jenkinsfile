@@ -4,8 +4,8 @@ node {
     stage 'Checkout'
         checkout scm
     stage 'Build & UnitTest'
-        sh "docker build -t dockerstack_php_apache:B${BUILD_NUMBER} -f ./dockerstack/Dockerfile ."
-        sh "docker build -t dockerstack_db:db-B${BUILD_NUMBER} -f ./dockerstack/mysql.Dockerfile ."
+        sh "docker build -t dockerpvregistry.azurecr.io/dockerstack_php_apache:B${BUILD_NUMBER} -f ./dockerstack/Dockerfile ."
+        sh "docker build -t dockerpvregistry.azurecr.io/dockerstack_db:db-B${BUILD_NUMBER} -f ./dockerstack/mysql.Dockerfile ."
   
     stage 'Integration Test'
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
