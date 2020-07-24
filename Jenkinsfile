@@ -11,7 +11,7 @@ node {
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
 	
     stage 'authentificate to gitlab registry'
-	sh " az login "
+	
         sh " az acr login --name dockerpvregistry "
 	
     stage 'push to gcr'
