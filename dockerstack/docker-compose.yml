@@ -7,7 +7,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    image: dockerpvregistry.azurecr.io/dockerstack_php_apache
+    image: dockerpvregistry.azurecr.io/dockerstack_php_apache:B${BUILD_NUMBER}
     restart: always
     ports:
         - "8083:80"
@@ -20,7 +20,7 @@ services:
     build:
       context: .
       dockerfile: mysql.Dockerfile
-    image: dockerpvregistry.azurecr.io/dockerstack_db
+    image: dockerpvregistry.azurecr.io/dockerstack_db:B${BUILD_NUMBER}
     restart: always
     environment:
         MYSQL_ROOT_PASSWORD: "root"
