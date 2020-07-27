@@ -12,7 +12,7 @@ node {
 	
     stage 'authentificate to gitlab registry'
 	sh "az login -u a138007047@taalim.ma -p Vlea1233"
-	sh "az acr login --name dockerpvregistry.azurecr.io"
+	sh "az acr login --name dockerpvregistry"
 	sh "docker-compose -f ./dockerstack/docker-compose.yml push"
 
 	
