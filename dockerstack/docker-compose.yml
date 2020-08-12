@@ -23,10 +23,10 @@ services:
     image: dockerpvregistry.azurecr.io/dockerstack_db:B${BUILD_NUMBER}
     restart: always
     environment:
-        MYSQL_ROOT_PASSWORD: "root"
-        MYSQL_DATABASE: "dockerlamp"
-        MYSQL_USER: "admin"
-        MYSQL_PASSWORD: "dockerlamp"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: db123
     volumes:
         - ./dbdata:/var/lib/mysql
     ports:
