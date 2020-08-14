@@ -13,7 +13,6 @@ services:
         - "8083:80"
     volumes:
         - "./DocumentRoot/:/var/www/html/"
-        - "./apache2.conf:/etc/apache2/apache2.conf"
     depends_on:
         - db
   #db
