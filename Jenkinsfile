@@ -14,8 +14,7 @@ node {
 	sh "az acr login --name dockerprivatereg"
 	sh "docker-compose -f ./dockerstack/docker-compose.yml push"
 
-    stage 'cleanup workspace after build'
-	sh "rm -rf /var/lib/jenkins/workspace/*"
+    
 
 	
 }
