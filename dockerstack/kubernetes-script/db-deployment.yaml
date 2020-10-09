@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+  labels:
+    app: db
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: "dockerprivatereg.azurecr.io/dockerstack_db:B172"
+        ports:
+        - containerPort: 8002
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: rootpass
+        - name: MYSQL_DATABASE
+          value: db
+        - name: MYSQL_USER
+          value: mysqluser
+        - name: MYSQL_PASSWORD
+          value: db1234
+        volumeMounts:
+          - name: data-storage
+            mountPath: /dbdata
+      imagePullSecrets:
+      - name: secret
+      volumes:
+      - name: data-storage
+        persistentVolumeClaim:
+          claimName: data-claim
