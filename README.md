@@ -17,11 +17,18 @@ __Structure of The Code
 
 Let us take a look at how the code has been structured in our sample.
 
-   ***DocumentRoot:*** This directory contains the source code of the application we are going to build and deploy .
+   ***DocumentRoot:*** This directory contains the source code of the application we are going to build and deploy.  
+   
    ***docker-compose.yml:***  A YAML file to configure your application's services( PHP, Apache and MySQL).
+   
    ***Dockerfile:*** This file contains the containerization code for our app
+   
    ***conf:*** This directory contains the files which might be required by our Dockerfile to build the image. This may contain local yum repo configuration, pip files, apache configurations, etc.
+   
    ***env:*** This directory contains the property file application.properties which can be changed to suit your project and your Docker//Kubernetes, etc.
+   
    ***Jenkinsfile:*** This file contains the CI CD pipeline code which will be executed by Jenkins
+   
    ***kubernetes-script:*** A collection of scripts for various tasks in Kubernetes (deployments, services, PV, PVC, limit range)
+   
    ***monitoring:*** Grafana and Prometheus setup
