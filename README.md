@@ -28,7 +28,7 @@ Let us take a look at how the code has been structured in our sample.
    
    ***env:*** This directory contains the property file application.properties which can be changed to suit your project and your Docker//Kubernetes, etc.
    
-   ***Jenkinsfile:*** This file contains the CI CD pipeline code which will be executed by Jenkins
+   ***Jenkinsfile:*** This file contains the CI/CD pipeline code which will be executed by Jenkins
    
    ***kubernetes-script:*** A collection of scripts for various tasks in Kubernetes (deployments, services, PV, PVC, limit range)
    
