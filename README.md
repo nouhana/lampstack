@@ -6,10 +6,9 @@ Through this code we target to create a CI/CD pipeline with everything as code:
   Infrastructure as code: We containerize the application using Docker & Docker compose
   Deployment as code: We use Kubernetes as our container orchestrator. Our deployments are declarative via code.
 
-**Prerequisites
+__Prerequisites
 
-@@ As a prerequisite, you should be familiar with the fundamentals of:@@
-
+As a prerequisite, you should be familiar with the fundamentals of:
   Jenkins (we are going to run this app on Jenkins).
   Docker & Docker compose must be installed on the Jenkins server.
   Kubernetes cluster. 
@@ -19,7 +18,7 @@ __Structure of The Code
 
 Let us take a look at how the code has been structured in our sample.
 
-   ***DocumentRoot:*** This directory contains the source code of the application we are going to build and deploy
+   ***DocumentRoot:*** This directory contains the source code of the application we are going to build and deploy \n
    ***docker-compose.yml:***  A YAML file to configure your application's services( PHP, Apache and MySQL).
    ***Dockerfile:*** This file contains the containerization code for our app
    ***conf:*** This directory contains the files which might be required by our Dockerfile to build the image. This may contain local yum repo configuration, pip files, apache configurations, etc.
