@@ -7,6 +7,7 @@ Through this code we target to create a CI/CD pipeline with everything as code:
   Deployment as code: We use Kubernetes as our container orchestrator. Our deployments are declarative via code.
 
 **Prerequisites**
+
 As a prerequisite, you should be familiar with the fundamentals of:
   Jenkins (we are going to run this app on Jenkins).
   Docker & Docker compose must be installed on the Jenkins server.
