@@ -13,7 +13,7 @@ As a prerequisite, you should be familiar with the fundamentals of:
   Kubernetes cluster. 
   Azure container registry
 
-__Structure of The Code
+__Structure of The Code__
 
 Let us take a look at how the code has been structured in our sample.
 
