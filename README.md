@@ -18,7 +18,7 @@ __Structure of The Code
 
 Let us take a look at how the code has been structured in our sample.
 
-   ***DocumentRoot:*** This directory contains the source code of the application we are going to build and deploy \n
+   ***DocumentRoot:*** This directory contains the source code of the application we are going to build and deploy .
    ***docker-compose.yml:***  A YAML file to configure your application's services( PHP, Apache and MySQL).
    ***Dockerfile:*** This file contains the containerization code for our app
    ***conf:*** This directory contains the files which might be required by our Dockerfile to build the image. This may contain local yum repo configuration, pip files, apache configurations, etc.
