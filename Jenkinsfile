@@ -10,7 +10,7 @@ node {
         sh "docker-compose -f ./dockerstack/docker-compose.yml up --build -d"
 	
     stage 'authentificate and push to acr'
-	sh "az login -u  elghandoury.nouhaila@gmail.com -p 123azerty"
+	sh "az login -u  username -p pass"
 	sh "az acr login --name dockerimagesregistry"
 	sh "docker-compose -f ./dockerstack/docker-compose.yml push"
 
